@@ -1,0 +1,8 @@
+{
+  "name": "Chatty",
+  "version": "1.0.0",
+  "description": "App developed throughout the course",
+  "main": "index.js",
+  "author": "Arthur Gabriel @imarthurg",
+  "license": "MIT"
+}
