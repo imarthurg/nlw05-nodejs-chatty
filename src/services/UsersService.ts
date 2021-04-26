@@ -14,7 +14,7 @@ class UsersService {
   }
 
   async create(data: IUserCreateDTO) {
-    const userExists = await this.userRepository.findOne({ email: data.email });
+    const userExists = await this.findByEmail(data.email);
 
     if (userExists) {
       return userExists;
@@ -25,6 +25,14 @@ class UsersService {
     await this.userRepository.save(user);
 
     return user;
+  }
+
+  async findByEmail(email: string) {
+    const userExists = await this.userRepository.findOne({ email });
+
+    if (userExists) {
+      return userExists;
+    }
   }
 }
 

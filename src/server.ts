@@ -1,18 +1,7 @@
-import express from "express";
+import { http } from './http';
+import './websocket/client';
+import './websocket/admin';
 
-import "./database";
-
-import { router } from "./routes";
-
-const app = express();
-
-app.get("/", (req, res) => {
-  res.json({ message: "Hello World!" })
+http.listen(3000, () => {
+  console.log('Application Started');
 });
-
-app.use(express.json());
-app.use(router);
-
-app.listen(3019, () => {
-  console.log("Application Started");
-}); 

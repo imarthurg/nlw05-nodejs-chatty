@@ -10,6 +10,8 @@ console.log('[routes] Setting routes...')
 const settingsController = new SettingsController();
 
 router.post('/settings', settingsController.create);
+router.get('/settings/:username', settingsController.findByUsername);
+router.put('/settings/:username', settingsController.update);
 
 const usersController = new UsersController();
 
